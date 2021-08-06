@@ -1,0 +1,103 @@
+<div class="container-fluid p-0">
+  <form [formGroup]="subCategoryForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="name">Name :</label>
+          <input
+            type="text"
+            formControlName="name"
+            [ngClass]="{
+              'is-invalid': submitted && f.name.errors
+            }"
+            class="form-control"
+            placeholder="Enter Name"
+            id="name"
+          />
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="label">Country :</label>
+          <input
+            type="text"
+            formControlName="country"
+            [ngClass]="{
+              'is-invalid': submitted && f.country.errors
+            }"
+            class="form-control"
+            placeholder="Enter Country"
+            id="country"
+          />
+          <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+            <div *ngIf="f.country.errors.required">Country is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="label">Minimum GPA :</label>
+          <input
+            type="text"
+            formControlName="minimum_gpa"
+            [ngClass]="{
+              'is-invalid': submitted && f.minimum_gpa.errors
+            }"
+            class="form-control"
+            placeholder="Enter Minimum GPA"
+            id="minimum_gpa"
+          />
+          <div *ngIf="submitted && f.minimum_gpa.errors" class="invalid-feedback">
+            <div *ngIf="f.minimum_gpa.errors.required">Minimum GPA is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="label">Minimum GRE Score :</label>
+          <input
+            type="text"
+            formControlName="minimum_gre_score"
+            [ngClass]="{
+              'is-invalid': submitted && f.minimum_gre_score.errors
+            }"
+            class="form-control"
+            placeholder="Enter Minimum GRE Score"
+            id="minimum_gre_score"
+          />
+          <div *ngIf="submitted && f.minimum_gre_score.errors" class="invalid-feedback">
+            <div *ngIf="f.minimum_gre_score.errors.required">Minimum GRE Score is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="comment">Description :</label>
+          <textarea
+            class="form-control"
+            formControlName="description"
+            [ngClass]="{
+              'is-invalid': submitted && f.description.errors
+            }"
+            rows="3"
+            id="comment"
+          ></textarea>
+          <div
+            *ngIf="submitted && f.description.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.description.errors.required">
+              Description is required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end mb-3">
+      <button type="submit" class="btn btn-primary px-4">Submit</button>
+    </div>
+  </form>
+</div>
